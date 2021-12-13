@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let temp_feels = document.getElementsByClassName('temp_fells')[0];
     let condition = document.getElementsByClassName('condition')[0];
     let logo = document.getElementsByClassName('logo')[0].children[0];
+    let humidity_el = document.getElementsByClassName('other_info')[0].children[0].children[0];
+    let presure_el = document.getElementsByClassName('other_info')[0].children[1].children[0];
 
     function getLocation() {
         if(navigator.geolocation) {
@@ -50,6 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
             temp_feels.children[0].textContent = `${Math.round(info.main.feels_like)} C` ;
 
             condition.textContent = info.weather[0].main;
+
+            humidity_el.textContent = info.main.humidity + '%';
+            presure_el.textContent = info.main.pressure + ' hPa';
 
             if(info.weather[0].icon) logo.setAttribute('src', `${info.weather[0].icon}`);
 
@@ -93,4 +98,4 @@ window.addEventListener('resize', function() {
     let temp_btn = document.getElementsByClassName('temp_btn')[0];
     let temp_tool = document.getElementsByClassName('temp_tool')[0];    
     tool_tip(temp_btn, temp_tool);
-})
+});

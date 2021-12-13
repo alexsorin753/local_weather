@@ -1,12 +1,3 @@
-/*color pallet
-    < 0 - #91C4F2
- 0 - 10 - #39A2AE
-10 - 20 - #9dc288
-20 - 30 - #ceb32f
-   > 30 - #F48668
-
-*/
-
 * {
     box-sizing: border-box;
 }
@@ -31,7 +22,7 @@ body > div {
     left: 2rem;
 }
 .title {
-    font-size: 3rem;
+    font-size: 4rem;
     position: relative;
 }
 .title > span {
@@ -75,7 +66,16 @@ body > div {
 .temp > button:hover ~ .temp_tool {
     visibility: visible;
 }
-.logo > img {
-    height: 5rem;
-    filter: invert(100%) sepia(4%) saturate(14%) hue-rotate(342deg) brightness(102%) contrast(104%);
+.other_info > span:first-child {
+    margin-right: 2rem;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    body, html {
+        font-size: 2.4vw;
+    }
+    .logo > img {
+        width: 13vw;
+    }
 }
